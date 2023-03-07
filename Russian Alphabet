@@ -1,1 +1,24 @@
-Learn Russian Alphabet .
+import random
+
+sozluk={"а":"a","б":"b","в":"b","г":"g","д":"d","е":"ye","ё":"yo","ж":"j","з":"z","и":"ı","й":"y","к":"k","л":"l","м":"m","н":"n","о":"o","п":"p","р":"r","с":"s","т":"t","у":"u","ф":"f","х":"h","ц":"ts","ч":"ch","ш":"sh","щ":"sch","ъ":"sertlik","ы":"lh","ь":"yumuşak","э":"e","ю":"yu","я":"ya"}
+sech1=sozluk.keys()
+sech2=tuple(sech1)
+i=0
+puan=0
+soru=0
+while i<1:
+ sech3=random.choice(sech2)
+ print(sech3)
+ cvp=sozluk[sech3]
+ giris=input("Cevap: ")
+ if cvp==giris:
+  print("Basarili")
+  puan+=1
+  soru+=1
+ elif giris=="sonuc":
+  oran=100*(puan/soru)
+  print(soru,":",puan,"; Basari Orani ",oran)
+ elif cvp!=giris:
+  print("Basarisiz "+"Dogru Cevap: "+cvp)
+  puan-=1
+  soru+=1
